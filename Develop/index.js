@@ -4,10 +4,10 @@ const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 // An array of questions for user input
-const newSetupquestions = [
+const newSetupQuestions = [
   {
     type: "input",
-    name: "title",
+    name: "Title",
     message: "What is the title of your project?",
   },
   {
@@ -16,8 +16,13 @@ const newSetupquestions = [
     message: "What is your project description?",
   },
   {
+    type: "input",
+    name: "Usage",
+    message: "What is the purpose of this project?",
+  },
+  {
     type: "list",
-    name: "license",
+    name: "License",
     message: "Choose from the following licenses:",
     choices: [
       "Apache license 2.0",
@@ -30,14 +35,14 @@ const newSetupquestions = [
     type: "input",
     name: "email",
     message: "What is your e-mail address?",
+    validate: function (value) {
+      let accept = value.match(
+        /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+      );
+      if (accept) {
+        return true;
+      }
+      return "Email address is not valid, please enter a valid email address!";
+    },
   },
 ];
-
-// Function to write README file
-function writeToFile(fileName, data) {}
-
-// A function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
