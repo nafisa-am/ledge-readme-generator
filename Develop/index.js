@@ -76,10 +76,18 @@ const errorHandling = (err) => {
     console.log("README file successfully generated.");
   }
 
-  fs.writeFile(fileName, data, errorHandling);
+  fs.writeToFile(fileName, data, errorHandling);
 };
 
 // A function to initialize app
+const init = async () => {
+  try {
+    const data = await inquirer.prompt(newSetupQuestions);
+    writeToFile("./output/README.md", generateMarkdown(data));
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 // Function call to initialize app
 init();
