@@ -52,7 +52,7 @@ const newSetupQuestions = [
   },
   {
     type: "confirm",
-    name: "Contributing",
+    name: "Contributions",
     message: `Are you adding additional contributions to this project?`,
   },
   {
