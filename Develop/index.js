@@ -52,7 +52,7 @@ const newSetupQuestions = [
   },
   {
     type: "confirm",
-    name: "Contribution",
+    name: "Contributing",
     message: `Are you adding additional contributions to this project?`,
   },
   {
@@ -62,13 +62,22 @@ const newSetupQuestions = [
   },
   {
     type: "confirm",
-    name: "test",
+    name: "Tests",
     message: `Would you like to run any tests?`,
   },
 ];
 
 // Function to write README file
 const writeToFile = (fileName, data) => {};
+const errorHandling = (err) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log("README file successfully generated.");
+  }
+
+  fs.writeFile(fileName, data, errorHandling);
+};
 
 // A function to initialize app
 
