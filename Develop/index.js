@@ -45,4 +45,26 @@ const newSetupQuestions = [
       return "Email address is not valid, please enter a valid email address!";
     },
   },
+  {
+    type: "input",
+    name: "GitHub",
+    message: "What is your Github username",
+  },
+  {
+    type: "confirm",
+    name: "Contribution",
+    message: `Are you adding additional contributions to this project?`,
+  },
+  {
+    type: "input",
+    name: "contrib",
+    message: `Are you adding additional contributions to this project?`,
+  },
 ];
+
+// Function to write README file
+
+// A function to initialize app
+
+// Function call to initialize app
+init();
