@@ -57,12 +57,18 @@ const newSetupQuestions = [
   },
   {
     type: "input",
-    name: "contrib",
-    message: `Are you adding additional contributions to this project?`,
+    name: "Additions",
+    message: `Please state your additions.`,
+  },
+  {
+    type: "confirm",
+    name: "test",
+    message: `Would you like to run any tests?`,
   },
 ];
 
 // Function to write README file
+const writeToFile = (fileName, data) => {};
 
 // A function to initialize app
 
