@@ -3,15 +3,14 @@
 const renderLicenseBadge = (license) => {
   let licenseBadge;
   switch (license) {
-    case "APACHE_2.0":
-      licenseBadge = "https://img.shields.io/crates/l/rustc-serialize/0.3.24";
+    case "Apache license 2.0":
+      licenseBadge = "https://img.shields.io/badge/License-Apache_2.0-blue.svg";
       break;
     case "MIT":
-      licenseBadge = "https://img.shields.io/apm/l/vim-mode";
+      licenseBadge = "https://img.shields.io/badge/License-MIT-yellow.svg";
       break;
-    case "GPL_3.0":
-      licenseBadge =
-        "https://img.shields.io/eclipse-marketplace/l/notepad4e?label=GPL%203.0";
+    case "GNU General Public license v3.0":
+      licenseBadge = "https://img.shields.io/badge/License-GPLv3-blue.svg";
       break;
     case "None":
       licenseBadge = "";
@@ -23,14 +22,14 @@ const renderLicenseBadge = (license) => {
 const renderLicenseLink = (license) => {
   let licenseLink;
   switch (license) {
-    case "APACHE_2.0":
+    case "Apache license 2.0":
       licenseLink =
-        "\nFind out more on: https://www.apache.org/licenses/LICENSE-2.0";
+        "\nFind out more on: https://opensource.org/licenses/Apache-2.0";
       break;
     case "MIT":
       licenseLink = "\nFind out more on: https://opensource.org/licenses/MIT";
       break;
-    case "GNU GPLv3.0":
+    case "GNU General Public license v3.0":
       licenseLink =
         "\nFind out more on: https://www.gnu.org/licenses/gpl-3.0.en.html";
       break;
@@ -54,35 +53,43 @@ const renderLicenseSection = (license) => {
 //  A function to generate markdown for README
 const generateMarkdown = (data) => {
   return `# ${data.Title}
-
-  ![${renderLicenseSection(data.License)} license](${renderLicenseBadge(
-    data.License
+  
+  ![${renderLicenseSection(data.license)} license](${renderLicenseBadge(
+    data.license
   )})
-  ## Description
+
+  ## Table of Contents
+  * [Description](#Description)
+  * [Usage](#Usage)
+  * [License](#license)
+  * [Contributions](#Contributions)
+  * [Tests](#Test)
+  * [Questions](#Questions)
+  
+  
+  ## Description:
   ${data.Description}
+
   ## Usage :
   ${data.Usage}
+  
   ## License : 
-  ${data.License}
+  ${data.license}
 
- ${renderLicenseSection(data.License)} license
- ${renderLicenseLink(data.License)}
+ ${renderLicenseLink(data.license)}
 
-  ## Contributions ;
+  ## Contributions: 
   ${data.Contributions}
-  ## Tests
+  ${data.Additions}
+
+   ## Tests:
   ${data.Tests}
-  ## Questions
+
+  ## Questions:
   If you have any questions about this project or you would like to contribute, then please feel free to contact me on ${
     data.email
-  }. 
-  This repo can be view at https://github.com/${data.Github}
-  ## GitHub ; 
-  ${data.Github}
-  ## email : 
-  ${data.email}
-  ##Additions
-  ${data.Additions}
+  }.
+  This repo can be viewed at https://github.com/${data.GitHub}
 `;
 };
 

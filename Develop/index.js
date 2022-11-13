@@ -22,12 +22,12 @@ const newSetupQuestions = [
   },
   {
     type: "list",
-    name: "License",
+    name: "license",
     message: "Choose from the following licenses:",
     choices: [
       "Apache license 2.0",
-      "MIT License",
-      "GNU General Public License v3.0",
+      "MIT",
+      "GNU General Public license v3.0",
       "None",
     ],
   },
@@ -58,7 +58,7 @@ const newSetupQuestions = [
   {
     type: "input",
     name: "Additions",
-    message: `Please state your additions.`,
+    message: `Please state your additions:`,
   },
   {
     type: "confirm",
@@ -68,13 +68,14 @@ const newSetupQuestions = [
 ];
 
 // Function to write README file
-const writeToFile = (fileName, data) => {};
-const errorHandling = (err) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log("README file successfully generated.");
-  }
+const writeToFile = (fileName, data) => {
+  const errorHandling = (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("README file successfully generated.");
+    }
+  };
 
   fs.writeFile(fileName, data, errorHandling);
 };
