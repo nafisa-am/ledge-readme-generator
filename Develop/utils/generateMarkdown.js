@@ -3,11 +3,11 @@
 const renderLicenseBadge = (license) => {
   let licenseBadge;
   switch (license) {
-    case "MIT":
-      licenseBadge = "https://img.shields.io/apm/l/vim-mode";
-      break;
     case "APACHE_2.0":
       licenseBadge = "https://img.shields.io/crates/l/rustc-serialize/0.3.24";
+      break;
+    case "MIT":
+      licenseBadge = "https://img.shields.io/apm/l/vim-mode";
       break;
     case "GPL_3.0":
       licenseBadge =
@@ -23,12 +23,12 @@ const renderLicenseBadge = (license) => {
 const renderLicenseLink = (license) => {
   let licenseLink;
   switch (license) {
-    case "MIT":
-      licenseLink = "\nFind out more on: https://opensource.org/licenses/MIT";
-      break;
     case "APACHE_2.0":
       licenseLink =
         "\nFind out more on: https://www.apache.org/licenses/LICENSE-2.0";
+      break;
+    case "MIT":
+      licenseLink = "\nFind out more on: https://opensource.org/licenses/MIT";
       break;
     case "GNU GPLv3.0":
       licenseLink =
@@ -47,14 +47,15 @@ const renderLicenseSection = (license) => {
   if (license === "None") {
     return "No";
   } else {
-    return data.license;
+    return license;
   }
 };
-//  A function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
 
-  ![${renderLicenseSection(data.license)} license](${renderLicenseBadge(
+//  A function to generate markdown for README
+const generateMarkdown = (data) => {
+  return `# ${data.Title}
+
+  ![${renderLicenseSection(data.License)} license](${renderLicenseBadge(
     data.License
   )})
   ## Description
@@ -64,8 +65,8 @@ function generateMarkdown(data) {
   ## License : 
   ${data.License}
 
- ${renderLicenseSection(data.license)} license
- ${renderLicenseLink(data.license)}
+ ${renderLicenseSection(data.License)} license
+ ${renderLicenseLink(data.License)}
 
   ## Contributions ;
   ${data.Contributions}
@@ -80,7 +81,9 @@ function generateMarkdown(data) {
   ${data.Github}
   ## email : 
   ${data.email}
+  ##Additions
+  ${data.Additions}
 `;
-}
+};
 
 module.exports = generateMarkdown;
