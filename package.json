@@ -1,7 +1,7 @@
 {
   "name": "ledge-readme-generator",
   "version": "1.0.0",
-  "description": "Node.js Challenge: Professional README Generator",
+  "description": "## Your Task",
   "main": "index.js",
   "scripts": {
     "start": "node Develop/index.js"
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nafisa-am/ledge-readme-generator/issues"
   },
-  "homepage": "https://github.com/nafisa-am/ledge-readme-generator#readme"
+  "homepage": "https://github.com/nafisa-am/ledge-readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }

@@ -1,7 +1,7 @@
 // Packages needed for this application
-const inquirer = require("inquirer");
-const fs = require("fs");
-const generateMarkdown = require("./utils/generateMarkdown");
+const inquirer = require('inquirer')
+const fs = require ('fs')
+const generateMarkdown = require('../utils/generateMarkdown')
 
 // An array of questions for user input
 const newSetupQuestions = [
@@ -22,7 +22,7 @@ const newSetupQuestions = [
   },
   {
     type: "list",
-    name: "license",
+    name: "License",
     message: "Choose from the following licenses:",
     choices: [
       "Apache license 2.0",
