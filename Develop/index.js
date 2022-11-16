@@ -1,32 +1,44 @@
 // Packages needed for this application
 const inquirer = require('inquirer')
 const fs = require ('fs')
-const generateMarkdown = require('../utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown')
 
 // An array of questions for user input
 const newSetupQuestions = [
   {
     type: "input",
-    name: "Title",
+    name: "title",
     message: "What is the title of your project?",
   },
   {
     type: "input",
-    name: "Description",
+    name: "description",
     message: "What is your project description?",
   },
   {
     type: "input",
-    name: "Usage",
+    name: "usage",
     message: "What is the purpose of this project?",
   },
   {
+    type: 'confirm',
+    name: 'installation',
+    message: `Do you want to add any installation notes?`
+  },
+{
+  type: 'input',
+    name: 'installNotes',
+    message: `Please add your installation notes`,
+    when: function (answers) {
+        return answers.installation}
+    },
+  {
     type: "list",
-    name: "License",
+    name: "license",
     message: "Choose from the following licenses:",
     choices: [
       "Apache license 2.0",
-      "MIT",
+      "MIT license",
       "GNU General Public license v3.0",
       "None",
     ],
@@ -47,22 +59,22 @@ const newSetupQuestions = [
   },
   {
     type: "input",
-    name: "GitHub",
+    name: "github",
     message: "What is your Github username",
   },
   {
     type: "confirm",
-    name: "Contributions",
+    name: "contributing",
     message: `Are you adding additional contributions to this project?`,
   },
   {
     type: "input",
-    name: "Additions",
+    name: "additions",
     message: `Please state your additions:`,
   },
   {
     type: "confirm",
-    name: "Tests",
+    name: "tests",
     message: `Would you like to run any tests?`,
   },
 ];
