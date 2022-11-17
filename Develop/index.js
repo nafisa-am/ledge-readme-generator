@@ -71,11 +71,20 @@ const newSetupQuestions = [
     type: "input",
     name: "additions",
     message: `Please state your additions:`,
+    when: function (answers) {
+      return answers.contributing}
   },
   {
     type: "confirm",
     name: "tests",
     message: `Would you like to run any tests?`,
+  },
+  {
+    type: "input",
+    name: "testsAnswer",
+    message: `Please state these tests:`,
+    when: function (answers) {
+      return answers.tests}
   },
 ];
 

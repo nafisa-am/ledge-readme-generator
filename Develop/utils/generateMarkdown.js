@@ -77,6 +77,7 @@ const generateMarkdown = (data) => {
 
   ## Installation
   ${data.installation}
+
   \`\`\`
 ${data.installNotes}
 \`\`\`
@@ -86,18 +87,19 @@ ${data.installNotes}
 
  ${renderLicenseLink(data.license)}
 
-  ## Contributions: 
+  ## Contributing: 
   ${data.contributing}
   ${data.additions}
 
    ## Tests:
   ${data.tests}
+  ${data.testsAnswer}
 
   ## Questions:
   If you have any questions about this project or you would like to contribute, then please feel free to contact me on ${
     data.email
   }.
-  This repo can be viewed at https://github.com/${data.GitHub}
+  This repo can be viewed at https://github.com/${data.github}
 `;
 };
 
