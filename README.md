@@ -40,7 +40,7 @@ These are the licensed used in this project:
 
 # Links
 
- Video link - https://drive.google.com/file/d/1fHncLdDsahJby_p0ule7pK-nri4DcxzK/view
+ Video link - https://watch.screencastify.com/v/tuz3Aa0aoH7KPQzvomCO
 
  Github repo - https://github.com/nafisa-am/ledge-readme-generator
  
